@@ -1,0 +1,19 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+#home{
+    height: 80px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+#home>a{
+    text-decoration: none;
+    color: bisque;
+}
