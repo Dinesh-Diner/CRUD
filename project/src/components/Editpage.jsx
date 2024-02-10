@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import style from "./homePage.module.css"
 
 const Editpage = () => {
 
@@ -48,9 +49,10 @@ const Editpage = () => {
         navigator("/users")
     }
   return (
-    <div>
-         <h2>EDIT USERS</h2>
+    <div id={style.createUser}>
+         
             <form action="">
+            <h5>EDIT USERS</h5>
                 <label htmlFor="">NAME</label>
                 <input type="text" value={name} onChange={getname} /> <br />
                 <label htmlFor="">SALARY</label>

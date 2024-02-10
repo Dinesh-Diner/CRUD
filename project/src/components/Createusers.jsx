@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import style from "./css.module.css"
+import style from "./homePage.module.css"
 
 const Createusers = () => {
 
@@ -42,7 +42,7 @@ const Createusers = () => {
 
     }
   return (
-    <div id='style.form1'>
+    <div id={style.createUser}>
        <form action="">
 
             <h2>CREATE-USERS</h2>

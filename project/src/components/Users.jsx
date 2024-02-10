@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import style from "./homePage.module.css"
 
 const Users = () => {
 
@@ -18,22 +19,33 @@ let deleteusers=(id)=>{
     window.location.assign("/users")
 }
   return (
-    <div>
+    <div id={style.userHome}>
         {info.map((x)=>{
             return(
+                
                 <div>
-                    <label htmlFor="">name:</label>
-                    <h3>{x.empname}</h3> 
-
-                    <label htmlFor="">salary:</label>
-                    <h3>{x.empsalary}</h3> 
-
-                    <label htmlFor="">company:</label>
-                    <h3>{x.empcompany}</h3> 
-
-                    <button onClick={()=>{deleteusers(x.id)}}>delete</button>
-                    <button ><Link to={`/edit/${x.id}`}>edit</Link></button>
-                </div>
+                <table>
+                    <tr>
+                        <th colSpan={2}>Employee {x.id}</th>
+                    </tr>
+                    <tr>
+                        <td>Name :</td>
+                        <td>{x.empname}</td>
+                    </tr>
+                    <tr>
+                        <td>Salary :</td>
+                        <td>{x.empsalary}</td>
+                    </tr>
+                    <tr>
+                        <td>Company :</td>
+                        <td>{x.empcompany}</td>
+                    </tr>
+                    <tr>
+                        <td><button><Link to={`/edit/${x.id}`}>Edit</Link></button></td>
+                        <td><button onClick={()=>{deleteusers(x.id)}}><Link>Delete</Link></button></td>
+                    </tr>
+                </table>
+            </div>
             )
         })}
     </div>
